@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alimentação Saudável — Vida Saudável Angola</title>
-<meta name="description" content="Guias e artigos sobre alimentação saudável, adaptados à realidade angolana: ingredientes acessíveis, receitas e hábitos simples.">
-<link rel="canonical" href="https://www.vidasaudavelangola.com/alimentacao-saudavel/index.html">
+<title>Calculadoras de Saúde — IMC, Calorias, Água e Peso Ideal | Vida Saudável Angola</title>
+<meta name="description" content="Calcule o seu IMC, calorias diárias, água recomendada e peso ideal estimado — grátis e direto no telemóvel.">
+<link rel="canonical" href="https://www.vidasaudavelangola.com/calculadoras/index.html">
 <link rel="manifest" href="../manifest.json">
 <meta name="theme-color" content="#1F7A4D">
 <link rel="icon" href="../icons/favicon-32.png">
@@ -18,39 +18,108 @@
 
 <main id="conteudo-principal">
   <nav aria-label="Localização" class="container" style="padding-top:16px;font-size:.82rem;color:var(--texto-suave);">
-    <a href="../index.html">Início</a> / <span>Alimentação Saudável</span>
+    <a href="../index.html">Início</a> / <span>Calculadoras</span>
   </nav>
 
   <section class="hero" style="padding-top:20px;">
     <div class="container medida-texto">
-      <span class="etiqueta">Categoria</span>
-      <h1>Alimentação Saudável</h1>
-      <p class="lead">Escolhas simples e acessíveis para o seu dia a dia, com ingredientes que encontra facilmente em Angola.</p>
+      <span class="etiqueta">Ferramentas</span>
+      <h1>Calculadoras de saúde</h1>
+      <p class="lead">Estimativas simples para o ajudar a acompanhar a sua saúde. Não substituem uma avaliação profissional.</p>
     </div>
   </section>
 
-  <section class="seccao container">
-    <div class="lista-artigos" id="lista-artigos"></div>
+  <section class="seccao container medida-texto">
+
+    <!-- IMC -->
+    <div class="cartao-calculadora">
+      <h2>Calculadora de IMC</h2>
+      <div class="campo">
+        <label for="imc-peso">Peso (kg)</label>
+        <input type="number" id="imc-peso" inputmode="decimal" min="1" placeholder="ex: 68">
+      </div>
+      <div class="campo">
+        <label for="imc-altura">Altura (cm)</label>
+        <input type="number" id="imc-altura" inputmode="decimal" min="1" placeholder="ex: 170">
+      </div>
+      <button class="botao botao-primario" id="imc-calcular" type="button">Calcular IMC</button>
+      <div class="resultado-calculadora" id="imc-resultado"></div>
+    </div>
+
+    <!-- Calorias -->
+    <div class="cartao-calculadora">
+      <h2>Calculadora de calorias diárias</h2>
+      <div class="campo">
+        <label for="cal-sexo">Sexo</label>
+        <select id="cal-sexo">
+          <option value="homem">Homem</option>
+          <option value="mulher">Mulher</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="cal-idade">Idade (anos)</label>
+        <input type="number" id="cal-idade" min="1" placeholder="ex: 28">
+      </div>
+      <div class="campo">
+        <label for="cal-peso">Peso (kg)</label>
+        <input type="number" id="cal-peso" min="1" placeholder="ex: 68">
+      </div>
+      <div class="campo">
+        <label for="cal-altura">Altura (cm)</label>
+        <input type="number" id="cal-altura" min="1" placeholder="ex: 170">
+      </div>
+      <div class="campo">
+        <label for="cal-atividade">Nível de atividade</label>
+        <select id="cal-atividade">
+          <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+          <option value="1.375">Leve (exercício 1-3 dias/semana)</option>
+          <option value="1.55" selected>Moderado (exercício 3-5 dias/semana)</option>
+          <option value="1.725">Intenso (exercício 6-7 dias/semana)</option>
+          <option value="1.9">Muito intenso (trabalho físico ou atleta)</option>
+        </select>
+      </div>
+      <button class="botao botao-primario" id="cal-calcular" type="button">Calcular calorias</button>
+      <div class="resultado-calculadora" id="cal-resultado"></div>
+    </div>
+
+    <!-- Água -->
+    <div class="cartao-calculadora">
+      <h2>Calculadora de água diária</h2>
+      <div class="campo">
+        <label for="agua-peso">Peso (kg)</label>
+        <input type="number" id="agua-peso" min="1" placeholder="ex: 68">
+      </div>
+      <button class="botao botao-primario" id="agua-calcular" type="button">Calcular água recomendada</button>
+      <div class="resultado-calculadora" id="agua-resultado"></div>
+    </div>
+
+    <!-- Peso ideal -->
+    <div class="cartao-calculadora">
+      <h2>Calculadora de peso ideal (estimativa)</h2>
+      <div class="campo">
+        <label for="peso-sexo">Sexo</label>
+        <select id="peso-sexo">
+          <option value="homem">Homem</option>
+          <option value="mulher">Mulher</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="peso-altura">Altura (cm)</label>
+        <input type="number" id="peso-altura" min="1" placeholder="ex: 170">
+      </div>
+      <button class="botao botao-primario" id="peso-calcular" type="button">Calcular peso ideal</button>
+      <div class="resultado-calculadora" id="peso-resultado"></div>
+      <p style="font-size:.8rem;color:var(--texto-suave);margin-top:10px;">Esta calculadora fornece apenas uma estimativa geral (fórmula de Devine). O peso saudável varia conforme composição corporal, idade e histórico de saúde.</p>
+    </div>
+
+    <div class="caixa-aviso">
+      Estas calculadoras têm fins informativos e não substituem avaliação médica ou nutricional profissional.
+    </div>
   </section>
 </main>
 
 <div id="rodape-app"></div>
-<script src="../assets/js/artigos-dados.js"></script>
 <script src="../assets/js/main.js"></script>
-<script>
-(function () {
-  var lista = document.getElementById("lista-artigos");
-  var artigos = (window.ARTIGOS_VSA || []).filter(function (a) { return a.categoria === "alimentacao"; });
-  if (!artigos.length) {
-    lista.innerHTML = '<p style="color:var(--texto-suave);">Novos artigos desta categoria chegam em breve.</p>';
-    return;
-  }
-  lista.innerHTML = artigos.map(function (a) {
-    return '<a class="cartao-artigo" href="../blog/' + a.url + '">' +
-      '<span class="miniatura"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v20M6 2c0 4 4 4 4 8s-4 4-4 8M18 2v8a2 2 0 01-4 0V2"/></svg></span>' +
-      '<span class="conteudo"><h3>' + a.titulo + '</h3><span class="meta"><span>' + a.tempoLeitura + ' de leitura</span></span></span></a>';
-  }).join("");
-})();
-</script>
+<script src="../assets/js/calculadoras.js"></script>
 </body>
 </html>
