@@ -1,125 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-AO" data-profundidade="1">
+<html lang="pt-AO" data-profundidade="0">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calculadoras de Saúde — IMC, Calorias, Água e Peso Ideal | Vida Saudável Angola</title>
-<meta name="description" content="Calcule o seu IMC, calorias diárias, água recomendada e peso ideal estimado — grátis e direto no telemóvel.">
-<link rel="canonical" href="https://www.vidasaudavelangola.com/calculadoras/index.html">
-<link rel="manifest" href="../manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vida Saudável Angola — Saúde, Alimentação e Bem-Estar</title>
+<meta name="description" content="Portal angolano de saúde e alimentação: receitas, dicas para emagrecer ou ganhar peso, exercícios, vitaminas e bem-estar. Conteúdo confiável, feito para o seu telemóvel.">
+<link rel="canonical" href="https://www.vidasaudavelangola.com/index.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vida Saudável Angola">
+<meta property="og:title" content="Vida Saudável Angola — Saúde, Alimentação e Bem-Estar">
+<meta property="og:description" content="Receitas, dicas de alimentação, exercícios e bem-estar pensados para Angola.">
+<meta property="og:image" content="https://www.vidasaudavelangola.com/icons/icon-512.png">
+<meta property="og:url" content="https://www.vidasaudavelangola.com/index.html">
+<meta property="og:locale" content="pt_AO">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1F7A4D">
-<link rel="icon" href="../icons/favicon-32.png">
-<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32">
+<link rel="icon" href="icons/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Vida Saudável">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vida Saudável Angola",
+  "url": "https://www.vidasaudavelangola.com/",
+  "inLanguage": "pt-AO",
+  "description": "Portal angolano de saúde, alimentação e bem-estar.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vida Saudável Angola",
+    "logo": "https://www.vidasaudavelangola.com/icons/icon-512.png"
+  }
+}
+</script>
 </head>
 <body>
 <a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
+
 <div id="cabecalho-app"></div>
 
 <main id="conteudo-principal">
-  <nav aria-label="Localização" class="container" style="padding-top:16px;font-size:.82rem;color:var(--texto-suave);">
-    <a href="../index.html">Início</a> / <span>Calculadoras</span>
-  </nav>
 
-  <section class="hero" style="padding-top:20px;">
+  <section class="hero">
     <div class="container medida-texto">
-      <span class="etiqueta">Ferramentas</span>
-      <h1>Calculadoras de saúde</h1>
-      <p class="lead">Estimativas simples para o ajudar a acompanhar a sua saúde. Não substituem uma avaliação profissional.</p>
+      <span class="etiqueta">Feito para Angola 🇦🇴</span>
+      <h1>Saúde, alimentação e bem-estar para transformar a sua vida</h1>
+      <p class="lead">Receitas simples, dicas para emagrecer ou ganhar peso com segurança, exercícios e conselhos de bem-estar — escritos em português claro, pensados para o seu telemóvel.</p>
+      <div class="nervura" aria-hidden="true">
+        <svg viewBox="0 0 120 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M2 18 C 25 4, 45 20, 60 8 S 95 2, 118 12"/>
+          <path d="M22 12 L 30 6M40 15 L 47 9M70 9 L 76 4M92 8 L 98 3" stroke-width="1.4" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="acoes">
+        <a href="blog/index.html" class="botao botao-primario">Ver artigos</a>
+        <a href="calculadoras/index.html" class="botao botao-secundario">Calculadoras de saúde</a>
+      </div>
     </div>
   </section>
 
-  <section class="seccao container medida-texto">
-
-    <!-- IMC -->
-    <div class="cartao-calculadora">
-      <h2>Calculadora de IMC</h2>
-      <div class="campo">
-        <label for="imc-peso">Peso (kg)</label>
-        <input type="number" id="imc-peso" inputmode="decimal" min="1" placeholder="ex: 68">
-      </div>
-      <div class="campo">
-        <label for="imc-altura">Altura (cm)</label>
-        <input type="number" id="imc-altura" inputmode="decimal" min="1" placeholder="ex: 170">
-      </div>
-      <button class="botao botao-primario" id="imc-calcular" type="button">Calcular IMC</button>
-      <div class="resultado-calculadora" id="imc-resultado"></div>
-    </div>
-
-    <!-- Calorias -->
-    <div class="cartao-calculadora">
-      <h2>Calculadora de calorias diárias</h2>
-      <div class="campo">
-        <label for="cal-sexo">Sexo</label>
-        <select id="cal-sexo">
-          <option value="homem">Homem</option>
-          <option value="mulher">Mulher</option>
-        </select>
-      </div>
-      <div class="campo">
-        <label for="cal-idade">Idade (anos)</label>
-        <input type="number" id="cal-idade" min="1" placeholder="ex: 28">
-      </div>
-      <div class="campo">
-        <label for="cal-peso">Peso (kg)</label>
-        <input type="number" id="cal-peso" min="1" placeholder="ex: 68">
-      </div>
-      <div class="campo">
-        <label for="cal-altura">Altura (cm)</label>
-        <input type="number" id="cal-altura" min="1" placeholder="ex: 170">
-      </div>
-      <div class="campo">
-        <label for="cal-atividade">Nível de atividade</label>
-        <select id="cal-atividade">
-          <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
-          <option value="1.375">Leve (exercício 1-3 dias/semana)</option>
-          <option value="1.55" selected>Moderado (exercício 3-5 dias/semana)</option>
-          <option value="1.725">Intenso (exercício 6-7 dias/semana)</option>
-          <option value="1.9">Muito intenso (trabalho físico ou atleta)</option>
-        </select>
-      </div>
-      <button class="botao botao-primario" id="cal-calcular" type="button">Calcular calorias</button>
-      <div class="resultado-calculadora" id="cal-resultado"></div>
-    </div>
-
-    <!-- Água -->
-    <div class="cartao-calculadora">
-      <h2>Calculadora de água diária</h2>
-      <div class="campo">
-        <label for="agua-peso">Peso (kg)</label>
-        <input type="number" id="agua-peso" min="1" placeholder="ex: 68">
-      </div>
-      <button class="botao botao-primario" id="agua-calcular" type="button">Calcular água recomendada</button>
-      <div class="resultado-calculadora" id="agua-resultado"></div>
-    </div>
-
-    <!-- Peso ideal -->
-    <div class="cartao-calculadora">
-      <h2>Calculadora de peso ideal (estimativa)</h2>
-      <div class="campo">
-        <label for="peso-sexo">Sexo</label>
-        <select id="peso-sexo">
-          <option value="homem">Homem</option>
-          <option value="mulher">Mulher</option>
-        </select>
-      </div>
-      <div class="campo">
-        <label for="peso-altura">Altura (cm)</label>
-        <input type="number" id="peso-altura" min="1" placeholder="ex: 170">
-      </div>
-      <button class="botao botao-primario" id="peso-calcular" type="button">Calcular peso ideal</button>
-      <div class="resultado-calculadora" id="peso-resultado"></div>
-      <p style="font-size:.8rem;color:var(--texto-suave);margin-top:10px;">Esta calculadora fornece apenas uma estimativa geral (fórmula de Devine). O peso saudável varia conforme composição corporal, idade e histórico de saúde.</p>
-    </div>
-
-    <div class="caixa-aviso">
-      Estas calculadoras têm fins informativos e não substituem avaliação médica ou nutricional profissional.
+  <section class="faixa-categorias" aria-label="Categorias em destaque">
+    <div class="chips">
+      <a class="chip" href="blog/index.html?categoria=emagrecer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>Emagrecer</a>
+      <a class="chip" href="blog/index.html?categoria=ganhar-peso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l6-10 4 6 6-11"/></svg>Ganhar Peso</a>
+      <a class="chip" href="blog/index.html?categoria=receitas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v20M6 2c0 4 4 4 4 8s-4 4-4 8M18 2v8a2 2 0 01-4 0V2"/></svg>Receitas</a>
+      <a class="chip" href="blog/index.html?categoria=exercicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5l11 11M4 9l3-3 3 3M17 15l3 3-3 3M9 4l2 2-2 2M17 12l2-2-2-2"/></svg>Exercícios</a>
+      <a class="chip" href="blog/index.html?categoria=vitaminas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>Vitaminas</a>
+      <a class="chip" href="blog/index.html?categoria=bem-estar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>Bem-estar</a>
     </div>
   </section>
+
+  <section class="seccao container fade-in" aria-labelledby="titulo-categorias">
+    <div class="cabecalho-seccao">
+      <h2 id="titulo-categorias">Explore por assunto</h2>
+    </div>
+    <div class="grelha-categorias">
+      <a class="cartao-categoria" href="alimentacao-saudavel/index.html">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v20M6 2c0 4 4 4 4 8s-4 4-4 8M18 2v8a2 2 0 01-4 0V2"/></svg></span>
+        <h3>Alimentação Saudável</h3>
+        <p>Escolhas simples para o seu dia a dia</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=receitas">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></span>
+        <h3>Receitas</h3>
+        <p>Pratos angolanos e saudáveis</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=emagrecer">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></span>
+        <h3>Como Emagrecer</h3>
+        <p>Passo a passo, sem exageros</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=ganhar-peso">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l6-10 4 6 6-11"/></svg></span>
+        <h3>Como Ganhar Peso</h3>
+        <p>De forma saudável e sustentável</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=exercicios">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5l11 11M4 9l3-3 3 3M17 15l3 3-3 3M9 4l2 2-2 2M17 12l2-2-2-2"/></svg></span>
+        <h3>Exercícios</h3>
+        <p>Movimento para todos os níveis</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=vitaminas">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span>
+        <h3>Vitaminas</h3>
+        <p>O que o seu corpo precisa</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=saude">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg></span>
+        <h3>Saúde</h3>
+        <p>Informação responsável</p>
+      </a>
+      <a class="cartao-categoria" href="blog/index.html?categoria=bem-estar">
+        <span class="icone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.4-6.4l-2.1 2.1M8.7 16.3l-2.1 2.1m0-12.8l2.1 2.1m7.6 7.6l2.1 2.1"/></svg></span>
+        <h3>Bem-estar</h3>
+        <p>Corpo e mente em equilíbrio</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="seccao container fade-in" aria-labelledby="titulo-artigos">
+    <div class="cabecalho-seccao" style="display:flex;align-items:baseline;justify-content:space-between;">
+      <h2 id="titulo-artigos">Artigos recentes</h2>
+      <a class="ver-todos" href="blog/index.html">Ver todos →</a>
+    </div>
+    <div class="lista-artigos" id="lista-artigos-recentes">
+      <a class="cartao-artigo" href="blog/artigo-modelo.html">
+        <span class="miniatura"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v20M6 2c0 4 4 4 4 8s-4 4-4 8M18 2v8a2 2 0 01-4 0V2"/></svg></span>
+        <span class="conteudo">
+          <h3>Artigo modelo — este é o template usado para todos os 30 artigos</h3>
+          <span class="meta"><span>Alimentação</span><span>8 min de leitura</span></span>
+        </span>
+      </a>
+    </div>
+    <p style="font-size:.86rem;color:var(--texto-suave);margin-top:14px;">Os restantes artigos serão adicionados em lotes seguindo este mesmo modelo.</p>
+  </section>
+
+  <section class="container">
+    <div class="faixa-calculadoras fade-in">
+      <h2>Calculadoras de saúde</h2>
+      <p>IMC, calorias diárias, água recomendada e peso estimado — tudo grátis, direto no seu telemóvel.</p>
+      <a class="botao botao-secundario" href="calculadoras/index.html">Usar calculadoras</a>
+    </div>
+  </section>
+
+  <section class="seccao container">
+    <div class="caixa-newsletter fade-in">
+      <h2>Receba dicas de saúde toda a semana</h2>
+      <p>Sem spam. Apenas conteúdo útil, direto para o seu e-mail.</p>
+      <form class="form-newsletter" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Obrigado, inscrito(a)!';">
+        <input type="email" required placeholder="O seu e-mail" aria-label="O seu e-mail">
+        <button type="submit" class="botao botao-primario">Quero receber</button>
+      </form>
+    </div>
+  </section>
+
 </main>
 
 <div id="rodape-app"></div>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/calculadoras.js"></script>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
