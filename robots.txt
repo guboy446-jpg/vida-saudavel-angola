@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vidasaudavelangola.com/sitemap.xml
